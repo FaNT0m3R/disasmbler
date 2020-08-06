@@ -1,0 +1,84 @@
+GetLengCommand PCode,maxLen; ret = leng
+ReadCommand PCode, PString, maxLen; ret = addr next cmd
+
+
+исправить "mov [ebp+0D7h],54h" 
+       на "mov byte[ebp-29h],54h"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#  сделать так, чтобы анализаировать не строку, а структуру ###########################################
+
+struct oppdata
+{
+	char* prfxs
+	char* rep
+	char* oppcode
+	char* reg1
+	char* reg2
+	char* reg3
+} 
+
+TYPE
+0 пусто
+E0 [eax*2+ebx+3]
+
+
+REG
+0  пусто
+1  cs 
+2  ds 
+3  ss 
+4  es 
+5  fs 
+6  gs 
+7  eax
+8  ebx
+9  ecx
+A  edx
+B  edi
+C  esi
+D  ebp
+E  esp
+F  ax 
+10 bx 
+11 cx 
+12 dx 
+13 di 
+14 si 
+15 bp 
+16 sp 
+17 ah 
+18 bh 
+19 ch 
+1A dh 
+1B al 
+1C bl 
+1D cl 
+1E dl 
+
+
+--------------------
+[eax]
+reg = 0x07010000
+addr = 0
+---------------------
+[eax*4+ebx+1234]
+
+reg = 0x07 04 08 01
+addr = 1234
+--------------------
